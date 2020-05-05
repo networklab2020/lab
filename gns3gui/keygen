@@ -1,0 +1,4 @@
+#!/bin/sh
+rm -r keys
+mkdir keys
+ssh-keygen -o -a 100 -t ed25519 -N "" -f keys/id_ed25519 -C "gui.simpentest.de"

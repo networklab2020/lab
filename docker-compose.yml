@@ -1,0 +1,23 @@
+version: '3'
+services:
+    gui:
+      build: ./gns3gui
+      stdin_open: true
+      tty: true
+      ports:
+        - "2222:22"
+    server:
+      image: networklab2020/lab:casestudy2-1
+      privileged: true
+      volumes:
+        - "./docker:/var/lib/docker"
+    monitor:
+      image: networklab2020/monitor
+    cve_classifier:
+      image: networklab2020/cve_classifier
+      stdin_open: true
+      tty: true
+
+
+
+
